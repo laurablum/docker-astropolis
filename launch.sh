@@ -2,7 +2,7 @@
 
 set -x
 
-FORGE_VERSION=1.19.2-43.2.3
+FORGE_VERSION=1.19.2-43.3.9
 cd /data
 
 if ! [[ "$EULA" = "false" ]] || grep -i true eula.txt; then
@@ -12,9 +12,9 @@ else
 	exit 9
 fi
 
-if ! [[ -f 'Astropolis Server Files 1.2.zip' ]]; then
+if ! [[ -f 'Astropolis_server_pack.zip' ]]; then
 	rm -fr config kubejs libraries mods *.zip forge*.jar
-	curl -Lo 'Astropolis Server Files 1.2.zip' 'https://edge.forgecdn.net/files/4428/63/Astropolis Server Files 1.2.zip' && unzip -u -o 'Astropolis Server Files 1.2.zip' -d /data
+	curl -Lo 'Astropolis_server_pack.zip' 'https://edge.forgecdn.net/files/5232/781/Astropolis_server_pack.zip' && unzip -u -o 'Astropolis_server_pack.zip' -d /data
 	DIR_TEST=$(find . -type d -maxdepth 1 | tail -1 | sed 's/^.\{2\}//g')
 	if [[ $(find . -type d -maxdepth 1 | wc -l) -gt 1 ]]; then
 		cd "${DIR_TEST}"
