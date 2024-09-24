@@ -14,7 +14,7 @@ fi
 
 if ! [[ -f 'Astropolis_server_pack.zip' ]]; then
 	rm -fr config kubejs libraries mods *.zip forge*.jar
-	curl -Lo 'Astropolis_server_pack.zip' 'https://edge.forgecdn.net/files/5244/63/Astropolis_server_pack.zip' && unzip -u -o 'Astropolis_server_pack.zip' -d /data
+	curl -Lo 'Astropolis_server_pack.zip' 'https://mediafilez.forgecdn.net/files/4428/63/Astropolis%20Server%20Files%201.2.zip' && unzip -u -o 'Astropolis_server_pack.zip' -d /data
 	DIR_TEST=$(find . -type d -maxdepth 1 | tail -1 | sed 's/^.\{2\}//g')
 	if [[ $(find . -type d -maxdepth 1 | wc -l) -gt 1 ]]; then
 		cd "${DIR_TEST}"
@@ -44,5 +44,5 @@ fi
 
 sed -i 's/server-port.*/server-port=25565/g' server.properties
 
-chmod +x run.sh
-./run.sh
+chmod +x start.sh
+./start.sh
